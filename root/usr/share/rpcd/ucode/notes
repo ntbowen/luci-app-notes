@@ -1,0 +1,48 @@
+'use strict';
+
+import { open } from 'fs';
+
+const NOTES_FILE = '/etc/notes.md';
+
+return {
+	notes: {
+		read: {
+			call: function() {
+				let file = open(NOTES_FILE, 'r');
+
+				if (!file)
+					return { error: 'Could not open file: ${NOTES_FILE}'};
+
+				let contents = file.read('all');
+				file.close();
+
+				return {
+					contents: contents || ''
+				};
+			}
+		},
+
+		write: {
+			args: {
+				contents: ''
+			},
+
+			call: function(request) {
+				let file = open(NOTES_FILE, 'w');
+
+				if(!file)
+					return { error: 'Could not open notes file for writing: ${NOTES_FILE}'};
+
+				let written = file.write(request.args.contents);
+				file.close();
+
+				if (written != length(request.args.contents))
+					return { error: 'Could not write complete notes file: ${NOTES_FILE}'};
+
+				return {
+					success: true
+				}
+			}
+		}
+	}
+}
