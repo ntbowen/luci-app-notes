@@ -19,7 +19,7 @@ This repository currently provides .apk packages for OpenWrt releases using the 
 
 There is currently no custom package repository, so the package is not signed by a trusted repository.
 
-Copy or download the .apk package to the router, then install it directly with --allow-untrusted:
+Download the latest `.apk` from the [Releases page](https://github.com/vikzil/luci-app-notes/releases/latest), then install it directly with --allow-untrusted:
 
 ```
 apk add --allow-untrusted /path/to/luci-app-notes-0.1.0-r1.apk
