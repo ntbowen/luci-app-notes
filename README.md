@@ -70,31 +70,37 @@ This renderer supports a deliberately small subset of Markdown, enough for every
 ---
 
 **Bold text**
+
 `**Bold text**`
 
 ---
 
 __Also bold text__
+
 `__Also bold text__`
 
 ---
 
 *Italic text*
+
 `*Italic text*`
 
 ---
 
 _Also italic text_
+
 `_Also italic text_`
 
 ---
 
 Inline `code` like this
+
 \`code\`
 
 ---
 
 > A blockquote
+
 `> A blockquote`
 
 ---
@@ -105,18 +111,26 @@ Inline `code` like this
 + Unordered list item four
 * Unordered list item five
 * Unordered list item six
+
 `- Unordered list item one`
+
 `- Unordered list item two`
+
 `+ Unordered list item three`
+
 `+ Unordered list item four`
+
 `* Unordered list item five`
+
 `* Unordered list item six`
 
 ---
 
 1. Ordered list item one
 2. Ordered list item two
+
 `1. Ordered list item one`
+
 `2. Ordered list item two`
 
 ---
@@ -129,7 +143,9 @@ function example() {
 
 \```
 function example() {
+
     return true;
+    
 }
 \```
 
@@ -138,6 +154,7 @@ function example() {
 Special characters can be escaped using a backslash:
 
 \*\*This text is not bold, because asterisks are escaped\*\*
+
 `\*\*This text is not bold, because asterisks are escaped\*\*`
 
 ---
