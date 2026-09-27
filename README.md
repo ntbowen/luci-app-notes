@@ -158,4 +158,20 @@ Horizontal rules:
 
 ---
 
-To get started, delete everything above and start writing your own notes.
+## Screenshots
+
+**Menu location**
+
+![Notes entry in the LuCI menu](screenshots/menu.png)
+
+**View mode**
+
+![Notes description in view mode](screenshots/overview.png)
+
+**Edit mode**
+
+![Markdown source in edit mode](screenshots/markdown-edit.png)
+
+**Rendered result**
+
+![Rendered Markdown in view mode](screenshots/markdown-rendered.png)
