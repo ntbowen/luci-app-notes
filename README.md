@@ -141,12 +141,10 @@ function example() {
 }
 ```
 
-\```
-function example() {
-
-    return true;
-    
-}
+\``` \
+function example() { \
+    return true; \
+} \
 \```
 
 --- 
