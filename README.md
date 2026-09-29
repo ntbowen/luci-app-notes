@@ -14,6 +14,8 @@ Note: there is currently no live preview while editing. Formatting is applied af
 
 ## Compatibility
 
+Both .ipk and .apk packages are built PKGARCH:=all option and should run on any OpenWrt-supported architecture.
+
 Tested and working with both OpenWrt package formats:
 
 - .ipk - tested on x86_64, OpenWrt v24.10.8
@@ -21,21 +23,21 @@ Tested and working with both OpenWrt package formats:
 
 ## Installation
 
-This repository provides both .ipk and .apk packages, covering opkg-based and apk-based OpenWrt releases.
+Packages are provided in both .ipk and .apk formats for OpenWrt releases using the opkg and apk package managers, respectively.
 
-There is currently no custom package repository, so neither package is signed by a trusted repository.
+There is currently no custom package repository, so these packages are not signed by a trusted repository.
 
 ### apk (OpenWrt v25.x and later)
 
 Download the latest .apk from the Releases page, then install it directly with --allow-untrusted:
 
-`apk add --allow-untrusted /path/to/luci-app-notes-0.1.0-r1.apk`
+`apk add --allow-untrusted /path/to/luci-app-notes-0.1.0-r2.apk`
 
 ### ipk (OpenWrt v24.x and earlier)
 
 Download the latest .ipk from the Releases page, then install it directly:
 
-`opkg install /path/to/luci-app-notes_0.1.0-r1_x86_64.ipk`
+`opkg install /path/to/luci-app-notes_0.1.0-r2_all.ipk`
 
 After installing, log in to LuCI and go to System -> Notes.
 

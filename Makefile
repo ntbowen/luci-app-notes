@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-notes
 PKG_VERSION:=0.1.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_SKIP_DOWNLOAD:=1
 
@@ -17,6 +17,7 @@ define Package/luci-app-notes
   SUBMENU:= 3. Applications
   TITLE:=LuCI Notes
   DEPENDS:=+luci-base +rpcd +rpcd-mod-ucode
+  PKGARCH:=all
 endef
 
 define Package/luci-app-notes/description
