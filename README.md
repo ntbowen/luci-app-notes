@@ -12,18 +12,30 @@ This app adds a Notes page to LuCI (System -> Notes) backed by /etc/notes.md. It
 
 Note: there is currently no live preview while editing. Formatting is applied after you save and switch back to view mode.
 
+## Compatibility
+
+Tested and working with both OpenWrt package formats:
+
+- .ipk - tested on x86_64, OpenWrt v24.10.8
+- .apk - tested on x86_64, OpenWrt v25.12.5
 
 ## Installation
 
-This repository currently provides .apk packages for OpenWrt releases using the APK package format.
+This repository provides both .ipk and .apk packages, covering opkg-based and apk-based OpenWrt releases.
 
-There is currently no custom package repository, so the package is not signed by a trusted repository.
+There is currently no custom package repository, so neither package is signed by a trusted repository.
 
-Download the latest `.apk` from the [Releases page](https://github.com/vikzil/luci-app-notes/releases/latest), then install it directly with --allow-untrusted:
+### apk (OpenWrt v25.x and later)
 
-```
-apk add --allow-untrusted /path/to/luci-app-notes-0.1.0-r1.apk
-```
+Download the latest .apk from the Releases page, then install it directly with --allow-untrusted:
+
+`apk add --allow-untrusted /path/to/luci-app-notes-0.1.0-r1.apk`
+
+### ipk (OpenWrt v24.x and earlier)
+
+Download the latest .ipk from the Releases page, then install it directly:
+
+`opkg install /path/to/luci-app-notes_0.1.0-r1_x86_64.ipk`
 
 After installing, log in to LuCI and go to System -> Notes.
 
@@ -40,7 +52,7 @@ Note: installing or uninstalling this package restarts rpcd to register/unregist
 - Run `make menuconfig` and make sure luci-app-notes is selected under:
   LuCI ---> 3. Applications --->
 - Build just this package:
-  make package/luci-app-notes/{clean,prepare,compile} V=s
+  `make package/luci-app-notes/{clean,prepare,compile} V=s`
 - Verify that the package has been built:
 ```
 find bin/packages -iname '*luci-app-notes*'
