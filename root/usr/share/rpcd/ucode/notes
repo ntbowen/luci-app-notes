@@ -11,7 +11,7 @@ return {
 				let file = open(NOTES_FILE, 'r');
 
 				if (!file)
-					return { error: 'Could not open file: ${NOTES_FILE}'};
+					return { error: 'open_read', path: NOTES_FILE };
 
 				let contents = file.read('all');
 				file.close();
@@ -31,13 +31,13 @@ return {
 				let file = open(NOTES_FILE, 'w');
 
 				if(!file)
-					return { error: 'Could not open notes file for writing: ${NOTES_FILE}'};
+					return { error: 'open_write', path: NOTES_FILE };
 
 				let written = file.write(request.args.contents);
 				file.close();
 
 				if (written != length(request.args.contents))
-					return { error: 'Could not write complete notes file: ${NOTES_FILE}'};
+					return { error: 'write_incomplete', path: NOTES_FILE };
 
 				return {
 					success: true

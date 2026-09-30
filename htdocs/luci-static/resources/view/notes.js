@@ -96,10 +96,18 @@ return view.extend({
 										contents = textarea.value;
 										showView();
 									} else {
-										alert(
-											(result && result.error) ||
-											_('Failed to save notes.')
-										);
+										let message = _('Failed to save notes.');
+
+										if (result && result.error === 'open_read')
+											message = _('Could not open file for reading: %s').format(result.path);
+										else if (result && result.error === 'open_write')
+											message = _('Could not open file for writing: %s').format(result.path);
+										else if (result && result.error === 'write_incomplete')
+											message = _('Could not write complete file: %s').format(result.path);
+										else if (result && result.error)
+											message = result.error;
+
+										alert(message);
 									}
 								});
 						}
@@ -111,7 +119,7 @@ return view.extend({
 		}
 
 		container = E('div', {}, [
-			E('h2', {}, _('Notes'))
+			E('h2', {}, _('Notebook'))
 		]);
 
 		showView();
