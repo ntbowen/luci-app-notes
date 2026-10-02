@@ -119,7 +119,7 @@ return view.extend({
 		}
 
 		container = E('div', {}, [
-			E('h2', {}, _('Notes'))
+			E('h2', {}, _('Notebook'))
 		]);
 
 		showView();
