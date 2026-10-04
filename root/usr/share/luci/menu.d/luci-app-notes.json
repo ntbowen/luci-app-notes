@@ -1,6 +1,6 @@
 {
 	"admin/system/notes": {
-		"title": "Notebook",
+		"title": "Notes",
 		"order": 90,
 		"action": {
 			"type": "view",
